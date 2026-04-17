@@ -1,0 +1,32 @@
+# ⚔️ Ethereum vs Solana
+
+| Feature                     | Ethereum                                       | Solana                                  |
+| :-------------------------- | :--------------------------------------------- | :-------------------------------------- |
+| **Launch Year**             | 2015                                           | 2020                                    |
+| **Founder**                 | Vitalik Buterin                                | Anatoly Yakovenko                       |
+| **Blockchain Type**         | General-purpose smart contract platform        | High-performance blockchain             |
+| **Consensus Mechanism**     | Proof of Stake (PoS) (after The Merge)         | Proof of History (PoH) + Proof of Stake |
+| **Transaction Speed (TPS)** | ~15–30 TPS                                     | ~65,000 TPS (theoretical)               |
+| **Transaction Fees**        | High (gas fees can be expensive)               | Very low (fractions of ₹)               |
+| **Programming Language**    | Solidity                                       | Rust, C, C++                            |
+| **Smart Contracts**         | Yes (very mature ecosystem)                    | Yes (fast execution)                    |
+| **Scalability**             | Limited (uses Layer 2 like Arbitrum, Optimism) | High scalability built-in               |
+| **Decentralization**        | Very high                                      | Moderate (some centralization concerns) |
+| **Ecosystem**               | Largest (DeFi, NFTs, dApps)                    | Growing fast                            |
+| **Network Stability**       | Very stable                                    | Had outages in past                     |
+| **Energy Efficiency**       | Energy efficient (after PoS)                   | Highly efficient                        |
+| **Token**                   | ETH                                            | SOL                                     |
+
+### 🧠 Key Differences (Simple Understanding)
+
+**🔹 Ethereum**
+
+- More secure & decentralized
+- Huge ecosystem (DeFi, NFTs, DAOs)
+- But slow + expensive
+
+**🔹 Solana**
+
+- Super fast & cheap
+- Good for high-performance apps
+- But slightly less decentralized
