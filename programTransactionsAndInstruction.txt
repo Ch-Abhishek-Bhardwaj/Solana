@@ -1,0 +1,28 @@
+Program
+Executable stateless account
+
+Instruction & Transaction
+Instruction = function call to a prgram
+Transaction = group of instructions
+
+
+Example:
+
+Send Transaction to initialize a counter state to 0
+tx = Transaction
+ix = Instruction
+
+tx = {
+    instructions:[ call counter prgram / initialize counter state ]
+    accounts:[ Alice ,counter account ,system program]
+}
+
+tx = {
+    instructions:[ Send 1 sol to Bobby ]
+    accounts:[ Alia ,Bobby ]
+}
+
+
+Flow :
+
+Refer Program.png
