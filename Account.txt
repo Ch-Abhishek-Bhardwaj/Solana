@@ -1,0 +1,55 @@
+All data on solana are stored in accounts.
+
+Account balance muct have minjmum called Rent.
+rent is proportional to the data size 
+
+Typically program code or state
+
+every Account has  a program as its owner
+only owner can modify the account ( modiy data ,and decuct lamports)
+
+Structure
+
+Account {
+    lamports : 64
+    data: vec<u8>
+    owner: pubkey
+
+    executable: bool
+    //rent_epoch
+}
+
+// Example
+
+If i have one 1 solana at 
+djvcsdcjksgviushlkjfehgoiejfhergojewfwfiewfwfwfdsd
+
+Account {
+    lamports: 1_000_000_000,
+    data: [],
+    owner: djvcsdcjksgviushlkjfehgoiejfhergojewfwfiewfwfwfdsd,
+    executable: false,
+    rent_epoch: 0
+}
+
+Bob deploy a counter program at 
+9xadbsgche6s8sdf5dsfdsgdgfd9vf5vdsvsdf5ds6fdsf65dsf
+
+Account {
+    lamports: 100000,(Depends on the data )
+    data: [0,1,255,123,...]
+    owner: BPF loader program,
+    executable: true,
+    rent_epoch: 0
+}
+
+counter program stores account (state) at 
+4567890poiuytrewasdfghjklmnbv
+
+Account {
+    lamports: 100000,
+    data: [0,1,255,123,...],
+    owner: 9xadbsgche6s8sdf5dsfdsgdgfd9vf5vdsvsdf5ds6fdsf65dsf,
+    executable: false,
+    rent_epoch: 0
+}
