@@ -1,0 +1,6 @@
+cross program invocation
+
+A Cross-Program Invocation (CPI) is when one program calls an instruction on another program during execution. CPIs enable composability: any program's instructions can be invoked by any other program on the network.
+
+Official Documentation:
+https://solana.com/docs/core/cpi
