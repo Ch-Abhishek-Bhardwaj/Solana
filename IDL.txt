@@ -9,4 +9,4 @@ Anchor client
                          ix = inc        ix = inc
 
 Interface defination language    Like an Abi(EVM)
-when a program is deployed it generates an idl file
+when a program is deployed it generates an idl fil

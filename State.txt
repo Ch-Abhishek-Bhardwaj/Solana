@@ -1,0 +1,7 @@
+#state 
+States are strored in accounts 
+Account are owned by the program
+When creating accounts
+    -specify space needed to store the states 
+    -pay rent 
+    -account to be created must sign to prove existence

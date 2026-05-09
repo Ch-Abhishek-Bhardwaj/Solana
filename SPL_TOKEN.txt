@@ -1,0 +1,203 @@
+Solana Token System Explained
+
+In Solana, tokens are managed mainly by the SPL Token Program.
+It works similarly to ERC-20 tokens on Ethereum.
+
+1. Mint
+
+A Mint is the token itself.
+
+It defines:
+
+Token name/supply
+Decimal places
+Authority rules
+
+Think of it like:
+
+“The official definition of a currency.”
+
+Example:
+
+USDC Mint
+BONK Mint
+Your custom token mint
+Mint stores
+Field	Meaning
+Supply	Total tokens created
+Decimals	Precision
+Mint Authority	Who can create more tokens
+Freeze Authority	Who can freeze accounts
+Example
+
+If you create token:
+
+ABHI Coin
+
+then a Mint Account is created on Solana.
+
+That account represents the token itself.
+
+2. Mint Authority
+
+The Mint Authority is the wallet allowed to create (mint) new tokens.
+
+Example:
+
+Mint Authority = Your Wallet
+
+means your wallet can generate more ABHI tokens.
+
+Example Flow
+
+Suppose:
+
+Current supply = 1000
+You mint 500 more
+
+New supply:
+
+1500
+
+Only the Mint Authority can do this.
+
+Removing Mint Authority
+
+Projects often revoke it to make supply fixed.
+
+This creates scarcity.
+
+Example:
+
+No one can mint more tokens forever.
+3. Token Program
+
+The SPL Token Program is Solana’s built-in smart contract for tokens.
+
+It handles:
+
+Minting
+Transfers
+Burning
+Freezing
+Token accounts
+Important
+
+You usually do NOT write token logic yourself.
+
+Instead, your app interacts with the Token Program.
+
+Token Program ID
+
+Classic SPL Token Program:
+
+TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+4. Token Account
+
+A Token Account stores a user's balance for ONE specific token mint.
+
+Important:
+
+Wallets do NOT directly hold SPL tokens.
+
+Instead:
+
+Wallet owns token accounts
+Token accounts store balances
+Example
+
+You have:
+
+SOL in wallet
+USDC in a USDC token account
+BONK in BONK token account
+Structure
+
+A token account contains:
+
+Field	Meaning
+Mint	Which token
+Owner	Who owns it
+Amount	Token balance
+Example
+Owner = Abhishek Wallet
+Mint = ABHI Coin
+Balance = 500
+5. Associated Token Account (ATA)
+
+An Associated Token Account is the standard/default token account for a wallet + mint pair.
+
+Why ATA Exists
+
+Without ATA:
+
+A user could create many token accounts for same token.
+
+ATA gives:
+
+One standard token account per wallet per token.
+Formula
+
+ATA is derived from:
+
+Wallet Address + Mint Address
+
+So it is deterministic.
+
+Example
+
+Suppose:
+
+Item	Value
+Wallet	Abhishek
+Mint	USDC
+
+Then ATA:
+
+ATA(Abhishek, USDC)
+
+is automatically determined.
+
+Real Flow Example
+Step 1 — Create Mint
+
+Create token:
+
+ABHI Coin
+Step 2 — Set Mint Authority
+
+Your wallet becomes mint authority.
+
+Step 3 — Create ATA
+
+Create your associated token account for ABHI Coin.
+
+Step 4 — Mint Tokens
+
+Mint:
+
+1000 ABHI
+
+to your ATA.
+
+Step 5 — Transfer Tokens
+
+Send tokens from your ATA to another user's ATA.
+
+Visual Diagram
+                SPL TOKEN PROGRAM
+                         │
+         ┌───────────────┴───────────────┐
+         │                               │
+      Mint Account                 Token Accounts
+    (ABHI Coin)              ┌──────────┴─────────┐
+                             │                    │
+                    ATA for Alice         ATA for Bob
+                        500 ABHI             200 ABHI
+Simple Analogy
+Solana Term	Real World Analogy
+Mint	Currency type
+Mint Authority	Central bank
+Token Program	Banking system
+Token Account	Bank account
+ATA	Official default bank account

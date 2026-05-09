@@ -1,0 +1,7 @@
+#program ID
+
+How program id is derived?
+Randomly generated private key typically stored under `target/deploy/my_program.json
+
+private key needed for upgrade
+pub key needed for user interaction
